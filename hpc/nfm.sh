@@ -19,7 +19,7 @@ REPO_DIR=~/recommendation/knowledge_graph_attention_network
 MODEL_DIR=${REPO_DIR}/Model
 cd $MODEL_DIR
 
-model_type=kgat
+model_type=nfm
 for dataset in {yelp2018, amazon-book, last-fm}
 do
     python Main.py \
