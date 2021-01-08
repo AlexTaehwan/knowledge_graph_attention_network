@@ -7,7 +7,7 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node=4
 #SBATCH --gres=gpu:1
-#SBATCH -t 5-23:59:00
+#SBATCH -t 3-23:59:00
 
 module purge
 module load cuda/9.2.148 
