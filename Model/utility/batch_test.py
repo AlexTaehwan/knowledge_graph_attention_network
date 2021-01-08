@@ -18,6 +18,7 @@ from utility.loader_kgat import KGAT_loader
 from utility.loader_cfkg import CFKG_loader
 
 cores = multiprocessing.cpu_count() // 2
+print(f"Num cores: {cores}")
 
 args = parse_args()
 Ks = eval(args.Ks)
