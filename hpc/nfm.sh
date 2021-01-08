@@ -2,11 +2,12 @@
 
 #SBATCH --job-name=nfm
 #SBATCH --output=logs/%x-%j.out
-#SBATCH -A st_graphs
-#SBATCH -p dlt
-#SBATCH -n 1
+#SBATCH -A ST_GRAPHS
+#SBATCH -p shared_dlt
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=4
 #SBATCH --gres=gpu:1
-#SBATCH -t 47:59:00
+#SBATCH -t 5-23:59:00
 
 module purge
 module load cuda/9.2.148 
