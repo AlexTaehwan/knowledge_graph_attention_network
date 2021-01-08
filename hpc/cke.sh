@@ -3,7 +3,7 @@
 #SBATCH --job-name=cke
 #SBATCH --output=logs/%x-%j.out
 #SBATCH -A st_graphs
-#SBATCH -p dl
+#SBATCH -p dlt
 #SBATCH -n 1
 #SBATCH --gres=gpu:1
 #SBATCH -t 47:59:00
