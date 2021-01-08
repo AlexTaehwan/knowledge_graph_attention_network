@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-#SBATCH --job-name=kgat
+#SBATCH --job-name=bprmf
 #SBATCH --output=logs/%x-%j.out
 #SBATCH -A st_graphs
-#SBATCH -p dlt
+#SBATCH -p dl
 #SBATCH -n 1
 #SBATCH --gres=gpu:1
 #SBATCH -t 47:59:00
@@ -15,13 +15,18 @@ module load gcc/5.2.0
 source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
 source activate kgat
 
+model_type=bprmf
+datasets=("amazon_book" "last-fm" "yelp2018")
+
 REPO_DIR=~/recommendation/knowledge_graph_attention_network
 MODEL_DIR=${REPO_DIR}/Model
 cd $MODEL_DIR
 
-model_type=bprmf
-for dataset in {yelp2018, amazon-book, last-fm}
+printf "Running model_type=${model_type} on all datasets"
+for dataset in ${datasets[*]}
 do
+    date
+    printf "Running model_type=${model_type} on dataset=${dataset}\n"
     python Main.py \
         --model_type $model_type \
         --alg_type bi \
@@ -40,4 +45,4 @@ do
         --use_att True \
         --use_kge True
 done
-
+printf "Finished"
