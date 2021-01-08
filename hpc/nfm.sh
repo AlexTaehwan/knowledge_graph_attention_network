@@ -21,7 +21,7 @@ datasets=("amazon-book" "last-fm" "yelp2018")
 
 REPO_DIR=~/recommendation/knowledge_graph_attention_network
 MODEL_DIR=${REPO_DIR}/Model
-cd $REPO_DIR
+cd $MODEL_DIR
 
 printf "Running model_type=${model_type} on all datasets"
 for dataset in ${datasets[*]}
