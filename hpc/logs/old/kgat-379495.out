@@ -1,0 +1,4 @@
+Now you should run one of the following depending on your shell
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.csh
+slurmstepd: error: *** JOB 379495 ON dlt04 CANCELLED AT 2021-01-07T15:09:46 ***

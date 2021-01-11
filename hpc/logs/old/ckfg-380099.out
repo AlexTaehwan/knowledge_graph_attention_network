@@ -1,0 +1,31 @@
+Now you should run one of the following depending on your shell
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.csh
+Running model_type=ckfg on all datasetsFri Jan  8 14:34:23 PST 2021
+Running model_type=ckfg on dataset=amazon_book
+Num cores: 20
+Traceback (most recent call last):
+  File "Main.py", line 9, in <module>
+    from utility.batch_test import *
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/batch_test.py", line 47, in <module>
+    USR_NUM, ITEM_NUM = data_generator.n_users, data_generator.n_items
+NameError: name 'data_generator' is not defined
+Fri Jan  8 14:34:40 PST 2021
+Running model_type=ckfg on dataset=last-fm
+Num cores: 20
+Traceback (most recent call last):
+  File "Main.py", line 9, in <module>
+    from utility.batch_test import *
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/batch_test.py", line 47, in <module>
+    USR_NUM, ITEM_NUM = data_generator.n_users, data_generator.n_items
+NameError: name 'data_generator' is not defined
+Fri Jan  8 14:34:46 PST 2021
+Running model_type=ckfg on dataset=yelp2018
+Num cores: 20
+Traceback (most recent call last):
+  File "Main.py", line 9, in <module>
+    from utility.batch_test import *
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/batch_test.py", line 47, in <module>
+    USR_NUM, ITEM_NUM = data_generator.n_users, data_generator.n_items
+NameError: name 'data_generator' is not defined
+Finished

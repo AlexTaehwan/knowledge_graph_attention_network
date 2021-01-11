@@ -1,0 +1,13 @@
+Now you should run one of the following depending on your shell
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.csh
+Running model_type=nfm on all datasetsFri Jan  8 14:45:08 PST 2021
+Running model_type=nfm on dataset=amazon-book
+python: can't open file 'Main.py': [Errno 2] No such file or directory
+Fri Jan  8 14:45:08 PST 2021
+Running model_type=nfm on dataset=last-fm
+python: can't open file 'Main.py': [Errno 2] No such file or directory
+Fri Jan  8 14:45:08 PST 2021
+Running model_type=nfm on dataset=yelp2018
+python: can't open file 'Main.py': [Errno 2] No such file or directory
+Finished

@@ -1,0 +1,21 @@
+Now you should run one of the following depending on your shell
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.csh
+Running model_type=fm on all datasetsFri Jan  8 14:34:29 PST 2021
+Running model_type=fm on dataset=amazon_book
+Num cores: 20
+Traceback (most recent call last):
+  File "Main.py", line 9, in <module>
+    from utility.batch_test import *
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/batch_test.py", line 39, in <module>
+    data_generator = NFM_loader(args=args, path=args.data_path + args.dataset)
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/loader_nfm.py", line 14, in __init__
+    super().__init__(args, path)
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/load_data.py", line 27, in __init__
+    self.train_data, self.train_user_dict = self._load_ratings(train_file)
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/load_data.py", line 46, in _load_ratings
+    lines = open(file_name, 'r').readlines()
+FileNotFoundError: [Errno 2] No such file or directory: '../Data/amazon_book/train.txt'
+Fri Jan  8 14:34:46 PST 2021
+Running model_type=fm on dataset=last-fm
+slurmstepd: error: *** JOB 380101 ON dlt03 CANCELLED AT 2021-01-08T14:38:33 ***

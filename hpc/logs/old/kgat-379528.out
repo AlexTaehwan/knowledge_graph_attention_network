@@ -1,0 +1,33 @@
+Now you should run one of the following depending on your shell
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.csh
+Num cores: 20
+[n_users, n_items]=[45919, 45538]
+[n_train, n_test]=[930032, 253578]
+[n_entities, n_relations, n_triples]=[136499, 42, 1853704]
+[batch_size, batch_size_kg]=[1024, 2041]
+	convert ratings into adj mat done.
+	convert 86 relational triples into adj mat done. @1.1174s
+	generate si-normalized adjacency matrix.
+	reordering indices...
+	reorganize all kg data done.
+	sort meta-data done.
+	sort all data done.
+load the pretrained bprmf model parameters.
+using pretrained initialization
+#params: 12059472
+without pretraining.
+Epoch 0 [1181.6s]: train==[426.75177=25.73913 + 400.79712 + 0.21555]
+/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/loader_kgat.py:87: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -1).flatten()
+Epoch 9 [1150.3s + 47.4s]: train==[42.61623=19.58809 + 22.56781 + 0.46024], recall=[0.06343, 0.19116], precision=[0.01544, 0.00962], hit=[0.24518, 0.53946], ndcg=[0.07716, 0.15210]
+save the weights in path:  weights/yelp2018/kgat_si_sum_bi_l3/64-32-16/l0.0001_r1e-05-1e-05
+Epoch 19 [1144.5s + 45.9s]: train==[30.51083=16.77869 + 13.23335 + 0.49875], recall=[0.06562, 0.19640], precision=[0.01594, 0.00987], hit=[0.25182, 0.54926], ndcg=[0.08064, 0.15696]
+save the weights in path:  weights/yelp2018/kgat_si_sum_bi_l3/64-32-16/l0.0001_r1e-05-1e-05
+Epoch 29 [1151.9s + 45.8s]: train==[25.57369=14.99047 + 10.06198 + 0.52122], recall=[0.06741, 0.19774], precision=[0.01632, 0.00995], hit=[0.25630, 0.55229], ndcg=[0.08251, 0.15865]
+save the weights in path:  weights/yelp2018/kgat_si_sum_bi_l3/64-32-16/l0.0001_r1e-05-1e-05
+Epoch 39 [1147.7s + 45.6s]: train==[22.57887=13.58435 + 8.45608 + 0.53845], recall=[0.06816, 0.19983], precision=[0.01650, 0.01007], hit=[0.25855, 0.55556], ndcg=[0.08295, 0.15969]
+save the weights in path:  weights/yelp2018/kgat_si_sum_bi_l3/64-32-16/l0.0001_r1e-05-1e-05
+Epoch 49 [1152.3s + 45.0s]: train==[20.45628=12.60677 + 7.29707 + 0.55244], recall=[0.06810, 0.20069], precision=[0.01655, 0.01011], hit=[0.25955, 0.55675], ndcg=[0.08356, 0.16059]
+Epoch 50 [1150.0s]: train==[20.14504=12.57991 + 7.01165 + 0.55347]
+slurmstepd: error: *** JOB 379528 ON dlt04 CANCELLED AT 2021-01-08T14:28:53 ***

@@ -1,0 +1,96 @@
+Now you should run one of the following depending on your shell
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.csh
+/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/loader_kgat.py:87: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -1).flatten()
+/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/dask/config.py:168: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(f.read()) or {}
+WARNING:tensorflow:From /share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py:289: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[n_users, n_items]=[45919, 45538]
+[n_train, n_test]=[930032, 253578]
+[n_entities, n_relations, n_triples]=[136499, 42, 1853704]
+[batch_size, batch_size_kg]=[1024, 2041]
+	convert ratings into adj mat done.
+	convert 86 relational triples into adj mat done. @1.0791s
+	generate si-normalized adjacency matrix.
+	reordering indices...
+	reorganize all kg data done.
+	sort meta-data done.
+	sort all data done.
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+using xavier initialization
+#params: 12059472
+without pretraining.
+Traceback (most recent call last):
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1334, in _do_call
+    return fn(*args)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1319, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1407, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: slice index 1 of dimension 0 out of bounds.
+	 [[{{node strided_slice_1}}]]
+	 [[{{node Const_2}}]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "Main.py", line 244, in <module>
+    _, batch_loss, batch_base_loss, batch_kge_loss, batch_reg_loss = model.train(sess, feed_dict=feed_dict)
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py", line 426, in train
+    return sess.run([self.opt, self.loss, self.base_loss, self.kge_loss, self.reg_loss], feed_dict)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 929, in run
+    run_metadata_ptr)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1152, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1328, in _do_run
+    run_metadata)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/client/session.py", line 1348, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: slice index 1 of dimension 0 out of bounds.
+	 [[node strided_slice_1 (defined at /qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py:289) ]]
+	 [[node Const_2 (defined at /qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py:225) ]]
+
+Caused by op 'strided_slice_1', defined at:
+  File "Main.py", line 92, in <module>
+    model = KGAT(data_config=config, pretrain_data=pretrain_data, args=args)
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py", line 36, in __init__
+    self._build_model_phase_I()
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py", line 162, in _build_model_phase_I
+    self.ua_embeddings, self.ea_embeddings = self._create_bi_interaction_embed()
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py", line 289, in _create_bi_interaction_embed
+    ego_embeddings = tf.nn.dropout(ego_embeddings, 1 - self.mess_dropout[k])
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/ops/array_ops.py", line 654, in _slice_helper
+    name=name)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/ops/array_ops.py", line 820, in strided_slice
+    shrink_axis_mask=shrink_axis_mask)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/ops/gen_array_ops.py", line 9356, in strided_slice
+    shrink_axis_mask=shrink_axis_mask, name=name)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py", line 788, in _apply_op_helper
+    op_def=op_def)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py", line 507, in new_func
+    return func(*args, **kwargs)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 3300, in create_op
+    op_def=op_def)
+  File "/share/apps/python/anaconda3.2019.3/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 1801, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): slice index 1 of dimension 0 out of bounds.
+	 [[node strided_slice_1 (defined at /qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py:289) ]]
+	 [[node Const_2 (defined at /qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/KGAT.py:225) ]]
+
+/tmp/slurmd/job379494/slurm_script: line 31: --lr: command not found

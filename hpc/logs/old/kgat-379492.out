@@ -1,0 +1,22 @@
+Now you should run one of the following depending on your shell
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
+source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.csh
+Traceback (most recent call last):
+  File "Main.py", line 9, in <module>
+    from utility.batch_test import *
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/batch_test.py", line 42, in <module>
+    data_generator = KGAT_loader(args=args, path=args.data_path + args.dataset)
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/loader_kgat.py", line 16, in __init__
+    super().__init__(args, path)
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/load_data.py", line 35, in __init__
+    self.kg_data, self.kg_dict, self.relation_dict = self._load_kg(kg_file)
+  File "/qfs/people/hamc649/recommendation/knowledge_graph_attention_network/Model/utility/load_data.py", line 78, in _load_kg
+    kg_np = np.loadtxt(file_name, dtype=np.int32)
+  File "/people/hamc649/.local/lib/python3.7/site-packages/numpy/lib/npyio.py", line 926, in loadtxt
+    fh = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+  File "/people/hamc649/.local/lib/python3.7/site-packages/numpy/lib/_datasource.py", line 262, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+  File "/people/hamc649/.local/lib/python3.7/site-packages/numpy/lib/_datasource.py", line 618, in open
+    raise IOError("%s not found." % path)
+OSError: ../Data/yelp2018/kg_final.txt not found.
+/tmp/slurmd/job379492/slurm_script: line 31: --lr: command not found
