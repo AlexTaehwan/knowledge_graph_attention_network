@@ -16,7 +16,7 @@ module load gcc/5.2.0
 source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
 source activate kgat
 
-model_type=ckfg
+model_type=cfkg
 datasets=("amazon-book" "last-fm" "yelp2018")
 
 REPO_DIR=~/recommendation/knowledge_graph_attention_network
