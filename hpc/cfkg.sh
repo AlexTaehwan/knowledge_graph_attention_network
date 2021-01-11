@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-#SBATCH --job-name=ckfg
+#SBATCH --job-name=cfkg
 #SBATCH --output=logs/%x-%j.out
 #SBATCH -A ST_GRAPHS
 #SBATCH -p shared_dlt
