@@ -23,7 +23,7 @@ REPO_DIR=~/recommendation/knowledge_graph_attention_network
 MODEL_DIR=${REPO_DIR}/Model
 cd $MODEL_DIR
 
-printf "Running model_type=${model_type} on all datasets"
+printf "Running model_type=${model_type} on all datasets\n"
 for dataset in ${datasets[*]}
 do
     date
