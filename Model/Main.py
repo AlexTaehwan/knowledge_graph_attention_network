@@ -39,7 +39,8 @@ if __name__ == '__main__':
     np.random.seed(2019)
     args = parse_args()
 
-    os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu_id)
+    # CMH - 1/14/2021, removing this hardcoding because slurm should set this
+    #os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu_id)
 
     """
     *********************************************************
