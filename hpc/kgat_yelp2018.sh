@@ -5,7 +5,7 @@
 #SBATCH -A ST_GRAPHS
 #SBATCH -p shared_dlt
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:1
 #SBATCH -t 3-23:59:00
 
@@ -15,6 +15,8 @@ module load python/anaconda3.2019.3
 module load gcc/5.2.0
 source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
 source activate kgat
+
+echo "CUDA_VISIBLE_DEVICES: ${CUDA_VISIBLE_DEVICES}"
 
 model_type=kgat
 datasets=("yelp2018")
