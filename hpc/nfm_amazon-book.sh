@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-#SBATCH --job-name=nfm
+#SBATCH --job-name=nfm_amazon-book
 #SBATCH --output=logs/%x-%j.out
 #SBATCH -A ST_GRAPHS
 #SBATCH -p shared_dlt
@@ -17,7 +17,7 @@ source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
 source activate kgat
 
 model_type=nfm
-datasets=("amazon-book" "last-fm" "yelp2018")
+datasets=("amazon-book")
 
 REPO_DIR=~/recommendation/knowledge_graph_attention_network
 MODEL_DIR=${REPO_DIR}/Model

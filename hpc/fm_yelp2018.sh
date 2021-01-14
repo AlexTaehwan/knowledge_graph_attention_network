@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-#SBATCH --job-name=nfm
+#SBATCH --job-name=fm_yelp2018
 #SBATCH --output=logs/%x-%j.out
 #SBATCH -A ST_GRAPHS
 #SBATCH -p shared_dlt
@@ -16,8 +16,8 @@ module load gcc/5.2.0
 source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
 source activate kgat
 
-model_type=nfm
-datasets=("amazon-book" "last-fm" "yelp2018")
+model_type=fm
+datasets=("yelp2018")
 
 REPO_DIR=~/recommendation/knowledge_graph_attention_network
 MODEL_DIR=${REPO_DIR}/Model
