@@ -10,7 +10,7 @@
 #SBATCH -t 3-23:59:00
 
 module purge
-module load cuda/9.2.148 
+module load cuda/9.0.176
 module load python/anaconda3.2019.3
 module load gcc/5.2.0
 source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
