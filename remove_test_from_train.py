@@ -59,7 +59,7 @@ def main():
 
 
     # Read in input train data
-    train_data_path = f"{dataset_dir}/train.txt"
+    train_data_path = f"{dataset_dir}/train_original.txt"
     train_data = read_user_items(train_data_path)
 
     # Read in input test data
